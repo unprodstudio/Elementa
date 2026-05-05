@@ -1,6 +1,7 @@
 import gg.essential.gradle.multiversion.StripReferencesTransform.Companion.registerStripReferencesAttribute
-import gg.essential.gradle.util.*
 import gg.essential.gradle.util.RelocationTransform.Companion.registerRelocationAttribute
+import gg.essential.gradle.util.prebundle
+import gg.essential.gradle.util.versionFromBuildIdAndBranch
 import org.jetbrains.kotlin.gradle.dsl.JvmDefaultMode
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
@@ -64,6 +65,7 @@ dependencies {
 
 tasks.processResources {
     inputs.property("project.version", project.version)
+    exclude("fabric.mod.json") // UnityTranslate: We're excluding the FMJ so we can properly shade our modified version of Elementa.
     filesMatching("fabric.mod.json") {
         expand("version" to project.version)
     }
