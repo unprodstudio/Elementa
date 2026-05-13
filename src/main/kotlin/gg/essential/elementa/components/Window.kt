@@ -6,6 +6,7 @@ import gg.essential.elementa.constraints.SuperConstraint
 import gg.essential.elementa.constraints.resolution.ConstraintResolutionGui
 import gg.essential.elementa.constraints.resolution.ConstraintResolver
 import gg.essential.elementa.constraints.resolution.ConstraintResolverV2
+import gg.essential.elementa.effects.RoundedOutlineEffect
 import gg.essential.elementa.effects.ScissorEffect
 import gg.essential.elementa.font.FontRenderer
 import gg.essential.elementa.utils.elementaDev
@@ -65,6 +66,7 @@ class Window @JvmOverloads constructor(
             FontRenderer.initShaders()
             UICircle.initShaders()
             UIRoundedRectangle.initShaders()
+            RoundedOutlineEffect.initShaders()
         }
     }
 
